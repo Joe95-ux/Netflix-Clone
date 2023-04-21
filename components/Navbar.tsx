@@ -11,11 +11,9 @@ const Navbar = () => {
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
-   
-  // add an effect on scroll
+
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY)
       if (window.scrollY >= TOP_OFFSET) {
         setShowBackground(true)
       } else {
@@ -24,8 +22,7 @@ const Navbar = () => {
     }
 
     window.addEventListener('scroll', handleScroll);
-    
-    //remove event listener
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     }
